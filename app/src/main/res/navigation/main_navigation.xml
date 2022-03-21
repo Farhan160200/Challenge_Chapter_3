@@ -39,6 +39,9 @@
         android:label="fragment_keempat"
         tools:layout="@layout/fragment_keempat" >
         <action
+            android:id="@+id/action_fragmentKeempat_to_fragmentKetiga"
+            app:destination="@id/fragmentKetiga" />
+        <action
             android:id="@+id/action_fragmentKeempat_to_fragmentKelima"
             app:destination="@id/fragmentKelima" />
     </fragment>
@@ -46,5 +49,10 @@
         android:id="@+id/fragmentKelima"
         android:name="com.farhanfarkaann.challengechapter3.FragmentKelima"
         android:label="fragment_kelima"
-        tools:layout="@layout/fragment_kelima" />
+        tools:layout="@layout/fragment_kelima" >
+        <action
+            android:id="@+id/action_fragmentKelima_to_fragmentKesatu"
+            app:destination="@id/fragmentKesatu" />
+        <argument android:name="myName" />
+    </fragment>
 </navigation>

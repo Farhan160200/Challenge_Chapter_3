@@ -11,7 +11,7 @@
         android:id="@+id/pop_empat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Screen 2"
+        android:text="Screen 4"
         android:textAlignment="center"
         android:layout_marginTop="16dp"
         android:textSize="30sp"
@@ -22,16 +22,17 @@
 
     <EditText
         android:id="@+id/et_usia"
-        android:layout_width="wrap_content"
+        android:layout_width="235dp"
         android:layout_height="wrap_content"
         android:hint="Masukan Usia"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/et_alamat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/et_alamat"
-        android:layout_width="wrap_content"
+        android:layout_width="235dp"
         android:layout_height="wrap_content"
         android:hint="Masukan Alamat"
         app:layout_constraintBottom_toTopOf="@+id/et_pekerjaan"
@@ -40,9 +41,9 @@
 
     <EditText
         android:id="@+id/et_pekerjaan"
-        android:layout_width="144dp"
-        android:layout_height="48dp"
-        android:hint="Masukan Nama"
+        android:layout_width="235dp"
+        android:layout_height="wrap_content"
+        android:hint="Masukan Pekerjaan"
         app:layout_constraintBottom_toTopOf="@+id/btn_gts_5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -51,12 +52,11 @@
         android:id="@+id/btn_gts_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go To Screen 4"
+        android:text="Go To Screen 5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

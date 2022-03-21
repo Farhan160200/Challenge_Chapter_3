@@ -5,55 +5,56 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
+import com.farhanfarkaann.challengechapter3.activitydestination.*
+import com.farhanfarkaann.challengechapter3.databinding.FragmentKeempatBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentKeempat.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class FragmentKeempat : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentKeempatBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    companion object {
+        const val USIA = "USIA"
+        const val ALAMAT = "ALAMAT"
+        const val PEKERJAAN = "PEKERJAAN"
+        const val BUNDLE = "BUNDLE"
+        val NAMA  = "NAMA"
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_keempat, container, false)
+        binding = FragmentKeempatBinding.inflate(layoutInflater)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentKeempat.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FragmentKeempat().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnGts5.setOnClickListener {
+
+            val bundlesebelah = this.arguments
+            val nama  = bundlesebelah?.getString("nameNama")
+            val usia = binding.etUsia.text.toString().toInt()
+            val alamat = binding.etAlamat.text.toString()
+            val pekerjaan = binding.etPekerjaan.text.toString()
+            val bundle = bundleOf()
+            bundle.putString(NAMA,nama)
+            bundle.putInt(USIA,usia)
+            bundle.putString(ALAMAT,alamat)
+            bundle.putString(PEKERJAAN,pekerjaan)
+
+            it.findNavController().navigate(R.id.action_fragmentKeempat_to_fragmentKelima, bundle)
+        }
     }
-}
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
+    }
